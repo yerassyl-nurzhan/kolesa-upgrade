@@ -2,16 +2,15 @@
 
 class FirstCest
 {
-    public function _before(AcceptanceTester $I)
-    {
-    }
-
-    // Проверить кнопку Quick View в товаре Blouse
+    /* Проверить кнопку Quick View в товаре Blouse
+    */ 
     public function checkBlouseQuickView(AcceptanceTester $I)
     {
-        $I->amOnPage();
-        $I->waitForElementVisible('#homefeatured > li:nth-child(2) > div > div.right-block > h5 > a');
+        $I->amOnPage('');
+        $I->waitForElementVisible('#header_logo > a > img');
+        $I->scrollTo('#center_column > ul > li:nth-child(2)');
         $I->click('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view > span');
-        $I->waitForElementVisible('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1');
+        $I->waitForElementVisible('#index > div.fancybox-overlay.fancybox-overlay-fixed > div');
+        $I->seeElement('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1');
     }
 }
