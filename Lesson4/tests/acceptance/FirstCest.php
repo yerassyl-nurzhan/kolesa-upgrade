@@ -9,8 +9,10 @@ class FirstCest
         $I->amOnPage('');
         $I->waitForElementVisible('#header_logo > a > img');
         $I->scrollTo('#center_column > ul > li:nth-child(2)');
+        $I->moveMouseOver('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.product_img_link > img');
+        $I->waitForElementVisible('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view > span');
         $I->click('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view > span');
-        $I->waitForElementVisible('#index > div.fancybox-overlay.fancybox-overlay-fixed > div');
-        $I->seeElement('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1');
+        $I->waitForElementVisible('.fancybox-wrap');
+        $I->waitForText('Blouse');
     }
 }
