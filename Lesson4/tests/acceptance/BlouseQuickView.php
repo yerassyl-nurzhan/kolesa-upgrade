@@ -1,6 +1,6 @@
 <?php
 
-class FirstCest
+class BlouseQuickView
 {
     /* Проверить кнопку Quick View в товаре Blouse
     */ 
