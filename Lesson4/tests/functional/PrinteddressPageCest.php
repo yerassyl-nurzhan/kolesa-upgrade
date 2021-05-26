@@ -6,6 +6,9 @@ class PrinteddressPageCest
     */ 
     public function checkBlouseQuickView(FunctionalTester $I)
     {
+        $searchQueryTopXPath = '//input[@id='search_query_top']';
+        $searchBoxXPath = '//form[@id='searchbox']/button';
+
         $I->amOnPage('');
         $I->seeElement('#search_query_top');
         $I->fillField('#search_query_top', 'Printed dress');
