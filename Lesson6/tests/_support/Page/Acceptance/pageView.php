@@ -1,12 +1,12 @@
 <?php
-namespace Page\Functional;
+namespace Page\Acceptance;
 
 class pageView
 {
     /**
      * url of current page
      */
-    public static $URL = '';
+    public static $URL = 'http://automationpractice.com/index.php';
 
     //selector of the DRESSES button
     public static $dressesButton = '#block_top_menu > ul > li:nth-child(2) > a';
@@ -25,16 +25,16 @@ class pageView
     /**
      * Testers object
      * 
-     * @var \FunctionalTester;
+     * @var \AcceptanceTester;
      */
-    protected $functionalTester;
+    protected $acceptanceTester;
 
     /**
      * Сonstructor method
      */
-    public function __construct(\FunctionalTester $I)
+    public function __construct(\AcceptanceTester $I)
     {
-        $this->FunctionalTester = $I;
+        $this->AcceptanceTester = $I;
     }
 
     /**
