@@ -10,11 +10,11 @@ class viewChangeCest
     {
         $I->amOnUrl(pageView::$URL);
         $I->click(pageView::$dressesButton);
-        $I->seeElement(pageView::$summerDressesButton);
+        $I->waitForElement(pageView::$summerDressesButton);
         $I->click(pageView::$summerDressesButton);
-        $I->seeElement(pageView::$activeGridButton);
-        $I->seeElement(pageView::$gridView);
+        $I->waitForElement(pageView::$activeGridButton);
+        $I->waitForElement(pageView::$gridView);
         $I->click(pageView::$listButton);
-        $I->seeElement(pageView::$listView);
+        $I->waitForElement(pageView::$listView);
     }
 }

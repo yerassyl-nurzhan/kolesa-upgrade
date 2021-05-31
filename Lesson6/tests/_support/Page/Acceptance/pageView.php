@@ -13,7 +13,7 @@ class pageView
     //selector of the SUMMER DRESSES button
     public static $summerDressesButton = '#subcategories > ul > li:nth-child(3) > div.subcategory-image';
     //selector of the active Grid button
-    public static $activeGridButton = '//li[@id="grid"] | //li[@class="selected"]';
+    public static $activeGridButton = '.selected#grid';
     //selector of the List button
     public static $listButton = '#list';
     //selector of the grid view after clicking on the Grid button

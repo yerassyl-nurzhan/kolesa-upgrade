@@ -14,7 +14,7 @@ class loginNegativeCest
         $I->fillField(Login::$usernameField, 'locked_out_user');
         $I->fillField(Login::$passwordField, 'secret_sauce');
         $I->click(Login::$loginButton);
-        $I->seeElement(Login::$errorMessage);
+        $I->waitForElement(Login::$errorMessage);
         $login->closeErrorMessage();
         $I->dontSee(Login::$errorMessage);
     }
