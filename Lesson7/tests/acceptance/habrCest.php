@@ -15,7 +15,7 @@ class habrCest
      * @param Example $data
      * @dataprovider getDataForCheckingHeader
      */
-    public function checkHeader(AcceptanceTester $I, Example $data)
+    public function checkHeader(\AcceptanceTester $I, Example $data)
     {
         $I->amOnPage('');
         $I->waitForElementClickable(sprintf(Habr::$buttonInHeader, $data['buttonInHeader']));
