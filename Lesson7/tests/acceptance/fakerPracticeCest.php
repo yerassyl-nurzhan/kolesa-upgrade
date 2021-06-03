@@ -46,8 +46,6 @@ class fakerPracticeCest
         $I->fillField(Fill::$State, $State);
         $I->fillField(Fill::$Postal, $Postal);
         $I->click(Fill::$CardRadioButton);
-        $I->wait(2);
-        $I->click(Fill::$FirstNameCard);
         $I->fillField(Fill::$FirstNameCard, $FirstName);
         $I->fillField(Fill::$LastNameCard, $LastName);
         $I->fillField(Fill::$CardNumber, $CardNumber);
