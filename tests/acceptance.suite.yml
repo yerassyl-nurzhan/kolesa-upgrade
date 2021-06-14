@@ -7,11 +7,21 @@
 actor: AcceptanceTester
 modules:
     enabled:
+        - REST:
+            depends: PhpBrowser
+        - MongoDb:
+            dsn: 'mongodb://46.101.235.30/upgradeApp'
+            populate: false
+            cleanup: false
         - WebDriver:
-            url: http://habr.com/ru
+            url: 'http://izze.xyz'
             host: localhost
             port: 9515
             browser: chrome
             display_size: 1440x900
+            headers:
+               Content-Type: application/json
+        - Asserts
         - \Helper\Acceptance
+        - \Helper\BaseHelper
 step_decorators: ~        

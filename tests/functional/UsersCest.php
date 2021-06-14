@@ -16,10 +16,10 @@ class UsersCest
     ];
 
     /**
-     * Тест на создание юзера
+     * Тест на создание, обновление и удаление юзера
      * @group test1
      */
-    public function checkUserCreate(\FunctionalTester $I)
+    public function checkUserCreateUpdateAndDeleteUser(\FunctionalTester $I)
     {
 
         $userData = [
@@ -35,20 +35,19 @@ class UsersCest
         $I->seeResponseContainsJson(['status' => 'ok']);
         $I->sendGet('people', $userData);
 
-        $userOwner = $I->grabDataFromResponseByJsonPath('$[0]owner');
         $userId = $I->grabDataFromResponseByJsonPath('$[0]_id');
 
         $I->sendPut("human?_id={$userId[0]}", array('name' => 'SUCCESS'));
         $I->seeResponseContainsJson(['nModified' => '1']);
-        $I->sendGet("people?owner={$userOwner[0]}");
+        $I->sendGet("people?owner={$userData['owner']}");
         $I->seeResponseContainsJson(['name' => 'SUCCESS']);
-        $I->sendDelete("human?_id={$userId[0]}", array('job'));
+        $I->sendDelete("human?_id={$userId[0]}");
         $I->seeResponseContainsJson(['deletedCount' => '1']);
-        $I->sendGet("people?owner={$userOwner[0]}");
-        $I->seeResponseContainsJson([]);
+        $I->sendGet("people?owner={$userData['owner']}");
+        $I->dontSeeResponseContainsJson($userData);
     }
 
-    /**
+    /** 
      * Проверяем негативные сценарии создания пользователя
      * @group test2
      * @dataProvider getDataForCreateUserNegative
