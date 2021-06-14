@@ -3,7 +3,7 @@
 use PhpParser\Node\Expr\FuncCall;
 
 /**
- * Класс для работы с БД
+ * Класс для работы с DB
  */
 class DBCest
 {
