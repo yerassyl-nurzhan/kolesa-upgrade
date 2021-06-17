@@ -18,6 +18,9 @@ modules:
             host: localhost
             port: 9515
             browser: chrome
+            capabilities:
+                goog:chromeOptions:
+                    args: ["--headless", "disable-gpu"]
             headers:
                Content-Type: application/json
         - Asserts
