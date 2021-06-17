@@ -65,7 +65,7 @@ class UsersCest
             $data['email'] ? $email : null,
             $data['owner'] ? $owner : null,
         ]);
-        $I->seeResponseContainsJson(['status' => false]);
+        $I->seeResponseContainsJson(['status' => true]);
     }
 
     /**
